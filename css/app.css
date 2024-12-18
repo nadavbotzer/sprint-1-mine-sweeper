@@ -12,10 +12,10 @@
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s;
 }
-
+*/
 .hide {
     display: none;
-} */
+}
 
 /* Reset some default styles */
 /* Reset some default styles */
@@ -67,7 +67,14 @@ header h2 {
     justify-content: center;
 }
 
-.game-container td {
+.timer-container {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding: 20px;
+}
+
+.cell {
     width: 40px;
     height: 40px;
     border: 1px solid #ddd;
@@ -152,4 +159,16 @@ header h2 {
     color: #f4f4f9;
     text-decoration: none;
     transition: color 0.3s ease;
+}
+
+.clicked-cell-num {
+    background-color: #afafaf;
+}
+
+.clicked-cell-zero {
+    background-color: #d0d0d0;
+}
+
+.clicked-cell-num:hover {
+    background-color: #afafaf;
 }

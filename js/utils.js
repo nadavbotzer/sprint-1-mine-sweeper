@@ -7,14 +7,14 @@ const gNeighborOffsets = [
 ]
 
 function renderBoard(mat, selector) {
-
+    var elLifePoints = document.querySelector('.life-points')
+    elLifePoints.innerText = gGame.life
     var strHTML = '<table><tbody>'
     for (var i = 0; i < mat.length; i++) {
 
         strHTML += '<tr>'
         for (var j = 0; j < mat[0].length; j++) {
 
-            const cell = mat[i][j]
             const className = `cell cell-${i}-${j}`
 
             strHTML += `<td class="${className}" onclick="onCellClicked(this,${i},${j})" oncontextmenu="onCellMarked(this,${i},${j})"></td>`
@@ -62,31 +62,6 @@ function getRandomColor() {
     return color
 }
 
-function setMinesNegsCount(board, index) {
-
-    var row = index.i
-    var col = index.j
-    var mineCount = 0
-
-
-    for (var k = 0; k < gNeighborOffsets.length; k++) {
-        var offset = gNeighborOffsets[k]
-        var neighborRow = row + offset[0]
-        var neighborCol = col + offset[1]
-
-        if (
-            neighborRow >= 0 && neighborRow < board.length &&
-            neighborCol >= 0 && neighborCol < board[0].length
-        ) {
-            if (board[neighborRow][neighborCol].isMine) {
-                mineCount++
-            }
-        }
-    }
-
-    gBoard[index.i][index.j].minesAroundCount = mineCount
-}
-
 function expandShown(board, elCell, i, j) {
     // Check if the current cell is out of bounds
     if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) return
@@ -115,5 +90,13 @@ function expandShown(board, elCell, i, j) {
 }
 
 
+
+function getTimeFormat(timeStamp) {
+
+    const elapsedTime = Date.now() - timeStamp
+    const seconds = Math.floor(elapsedTime / 1000)
+    const milliseconds = elapsedTime % 1000
+    return `${seconds} : ${milliseconds.toString().padStart(3, '0')}`
+}
 
 
