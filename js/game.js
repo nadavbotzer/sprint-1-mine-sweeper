@@ -119,11 +119,13 @@ function setMines(clickedIdx) {
 function onCellMarked(elCell, i, j) {
     event.preventDefault()
     if (gGame.isOn === false) return
-    if (gBoard[i][j].isShown) return
+    if (gBoard[i][j].isShown && !gBoard[i][j].isMarked) return
     if (!gBoard[i][j].isMarked) {
+        gBoard[i][j].isMarked = true
         elCell.innerText = MARKED
         gGame.markedCount++
     } else {
+        gBoard[i][j].isMarked = false
         elCell.innerText = ''
         gGame.markedCount--
     }
@@ -197,7 +199,7 @@ function gameOver(isWin) {
                 if (gBoard[i][j].isMine) {
                     var elCell = document.querySelector(`.cell-${i}-${j}`)
                     elCell.innerText = MINE
-                    elMsg.innerText = 'You Lose'
+                    elMsg.innerText = 'You Lose, try again'
                 }
             }
         }
@@ -208,7 +210,7 @@ function gameOver(isWin) {
                 if (gBoard[i][j].isMine) {
                     var elCell = document.querySelector(`.cell-${i}-${j}`)
                     elCell.innerText = MARKED
-                    elMsg.innerText = 'You Win'
+                    elMsg.innerText = 'You Win! Good game'
                 }
             }
         }
