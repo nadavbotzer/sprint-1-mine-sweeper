@@ -1,0 +1,18 @@
+.cell {
+    width: 40px;
+    height: 40px;
+    background-color: #979797;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid #4b413e;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.hide {
+    display: none;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+    <title>Mines Sweeper</title>
+</head>
+
+<body onload="onInit()">
+    <header class="div">
+        <h2>Mine Sweeper</h2>
+    </header>
+    <div class="game-container"></div>
+    <div class="diff-container">
+        <button class="diff-btn" onclick="onChangeDiff(1)">Easy</button>
+        <button class="diff-btn" onclick="onChangeDiff(2)">Hard</button>
+        <button class="diff-btn" onclick="onChangeDiff(3)">Extreme</button>
+    </div>
+    <div class="good-game hide">
+        Good Game!
+        <button class="reset-btn" onclick="onInit()">Reset</button>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
