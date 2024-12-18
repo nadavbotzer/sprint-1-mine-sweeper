@@ -80,9 +80,8 @@ function onCellClicked(elCell, i, j) {
         gGame.life--
         elCell.innerText = MINE
         elLifePoints.innerText = gGame.life
-        console.log(elCell.innerText)
+        gBoard[i][j].isShown = true
         if (gGame.life < 1) {
-            gBoard[i][j].isShown = true
             gameOver(false)
             return
         }
