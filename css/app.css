@@ -1,4 +1,4 @@
-.cell {
+/* .cell {
     width: 40px;
     height: 40px;
     background-color: #979797;
@@ -15,4 +15,141 @@
 
 .hide {
     display: none;
+} */
+
+/* Reset some default styles */
+/* Reset some default styles */
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+header {
+    margin: 20px 0;
+}
+
+header h2 {
+    font-size: 3rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.game-container {
+    margin: 20px;
+}
+
+
+.game-container table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.game-container tr {
+    display: flex;
+    justify-content: center;
+}
+
+.game-container td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.game-container td:hover {
+    background-color: #d0d0d0;
+}
+
+.diff-container {
+    margin-bottom: 20px;
+}
+
+.diff-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.diff-btn:hover {
+    background-color: #45a049;
+}
+
+.good-game {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-top: 20px;
+}
+
+.good-game.hide {
+    display: none;
+}
+
+.reset-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: #f44336;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.footer a {
+    color: #f4f4f9;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }

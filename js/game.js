@@ -20,9 +20,9 @@ const MINE = '💣'
 
 function onInit() {
     gGame.markedMines = 0
-    gGame.isOn = false
+    gGame.isOn = true
     gBoard = buildBoard(gLevel.SIZE)
-    //   setMines()
+    setMines()
     setAllNegs()
     hideElement('.good-game')
     renderBoard(gBoard, '.game-container')
@@ -43,8 +43,8 @@ function buildBoard(size) {
             board[i][j] = cell
         }
     }
-    board[2][2].isMine = true
-    board[3][3].isMine = true
+    // board[2][2].isMine = true
+    // board[3][3].isMine = true
 
     return board
 }
@@ -144,6 +144,7 @@ function checkVictory() {
 function gameOver() {
     gGame.isOn = false
     console.log('Game Over')
+    showElement('.good-game')
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard[i].length; j++) {
             if (gBoard[i][j].isMine) {
