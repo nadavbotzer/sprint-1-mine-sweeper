@@ -66,6 +66,7 @@ function setAllNegs() {
 }
 
 function onCellClicked(elCell, i, j) {
+    var heartString = ''
     var elLifePoints = document.querySelector('.life-points')
     if (gGame.isOn === false) return
     if (gBoard[i][j].isMarked) return
@@ -79,7 +80,10 @@ function onCellClicked(elCell, i, j) {
     if (gBoard[i][j].isMine) {
         gGame.life--
         elCell.innerText = MINE
-        elLifePoints.innerText = gGame.life
+        for (var i = 0; i < gGame.life; i++) {
+            heartString += '♥'
+        }
+        elLifePoints.innerText = heartString
         gBoard[i][j].isShown = true
         if (gGame.life < 1) {
             gameOver(false)

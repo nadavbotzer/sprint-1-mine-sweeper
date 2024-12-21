@@ -8,7 +8,7 @@ const gNeighborOffsets = [
 
 function renderBoard(mat, selector) {
     var elLifePoints = document.querySelector('.life-points')
-    elLifePoints.innerText = gGame.life
+    elLifePoints.innerText = '♥♥♥'
     var strHTML = '<table><tbody>'
     for (var i = 0; i < mat.length; i++) {
 
