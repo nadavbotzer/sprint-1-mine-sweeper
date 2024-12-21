@@ -12,7 +12,7 @@
     <header class="header">
         <h2>Mines Sweeper</h2>
         <div class="timer-container">
-            <span>Timer: </span><span class="timer">00 : 000</span>
+            <span>TIMER: </span><span class="timer">00 : 000</span>
         </div>
     </header>
     <div class="game-container"></div>
@@ -21,11 +21,15 @@
         <button class="diff-btn" onclick="onChangeDiff(2)">Hard</button>
         <button class="diff-btn" onclick="onChangeDiff(3)">Extreme</button>
     </div>
-    <div class="features">Life points left: <span class="life-points">3</span></div>
+    <div class="features">
+        <div class="life-points-container">LIFE POINTS LEFT: <span class="life-points">3</span></div>
+        <button class="dark" onclick="onDarkMode()">Dark Mode</button>
+    </div>
     <div class="good-game hide">
-        <span class="out-come-msg">Good Game!</span>
+        <span class="out-come-msg"></span>
         <button class="reset-btn" onclick="onInit()">Reset</button>
     </div>
+
     <footer class="footer">
         <p>Nadav Botzer, Coding Academy DEC2024</p>
     </footer>

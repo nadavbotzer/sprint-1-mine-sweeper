@@ -139,18 +139,16 @@ function onChangeDiff(operator) {
     if (operator === 1) {
         gLevel.SIZE = 4
         gLevel.MINES = 2
-        onInit()
     }
     if (operator === 2) {
         gLevel.SIZE = 8
         gLevel.MINES = 14
-        onInit()
     }
     if (operator === 3) {
         gLevel.SIZE = 12
         gLevel.MINES = 32
-        onInit()
     }
+    onInit()
 }
 
 function setMinesNegsCount(board, index) {
@@ -199,7 +197,7 @@ function gameOver(isWin) {
                 if (gBoard[i][j].isMine) {
                     var elCell = document.querySelector(`.cell-${i}-${j}`)
                     elCell.innerText = MINE
-                    elMsg.innerText = 'You Lose, try again'
+                    elMsg.innerText = 'YOU LOSE, TRY AGAIN'
                 }
             }
         }
@@ -210,7 +208,7 @@ function gameOver(isWin) {
                 if (gBoard[i][j].isMine) {
                     var elCell = document.querySelector(`.cell-${i}-${j}`)
                     elCell.innerText = MARKED
-                    elMsg.innerText = 'You Win! Good game'
+                    elMsg.innerText = 'YOU WIN! GOOD GAME'
                 }
             }
         }
@@ -242,4 +240,8 @@ function resetTimer() {
         timerDisplay.innerText = `00 : 000` // Reset display
     }
 
+}
+
+function onDarkMode() {
+    document.documentElement.classList.toggle('dark-mode')
 }
